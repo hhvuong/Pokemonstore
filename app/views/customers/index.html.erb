@@ -1,0 +1,42 @@
+<section class="middleSection">
+      <div class="center container">
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Phone num</th>
+      <th>Cc type</th>
+      <th>Cc num</th>
+      <th>Cc exp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.address %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.phone_num %></td>
+        <td><%= customer.cc_type %></td>
+        <td><%= customer.cc_num %></td>
+        <td><%= customer.cc_exp %></td>
+        <td><%= link_to(image_tag("eye-icon.png", width: '60',height:'60'), customer, title: "Show") %> </td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customer', new_customer_path %>
+</div>
+</section>

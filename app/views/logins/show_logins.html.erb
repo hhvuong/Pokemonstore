@@ -1,0 +1,21 @@
+<section class="middleSection">
+      <div class="center container">
+<h1>Current Registered customers</h1>
+
+<table>
+  <tr>
+    <td>customer</td>
+    <td>Encrypted Password</td>
+  </tr>
+
+  <% Login.all.each do |login| %> 
+    <tr>
+      <td><%= login.customer %></td>
+      <td><%= login.password %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to 'To Login Form', logins_login_form_path %></p>
+</div>
+</section>

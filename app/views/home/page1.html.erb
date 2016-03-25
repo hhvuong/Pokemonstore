@@ -1,0 +1,36 @@
+ 
+    <section class="middleSection">
+      <div class="center container">
+      	<h1 class="head">Welcome To Your One Stop for all Pokemons games</h1>
+       <ul class="photo-grid">
+	<li>
+		<a>
+			<figure>
+				<img src="assets/games.png" height="300" width="240" alt="Games Icon">
+				<figcaption><p><%= link_to 'Pokemon Games', products_path %></p></figcaption>
+			</figure>
+		</a>
+	</li>
+	<li>
+		<a>
+			<figure>
+				<img src="assets/login.png" height="300" width="240" alt="Login Icon">
+				<figcaption><p><%= link_to 'LOGIN', logins_login_form_path %></p></figcaption>
+			</figure>
+		</a>
+	</li>
+	<li><a>
+			<figure>
+				<img src="assets/feedback.png" height="300" width="240" alt="search Icon">
+				<figcaption><p><%= link_to 'Give Us Feedback!', home_feedback_path %></p></figcaption>
+			</figure>
+		</a>
+	</li>
+</ul>
+<div class="absolute"><%= image_tag("gaming.png",:size => "860x600", :alt => "logo") %></div>
+
+</div>
+</section>
+
+   
+

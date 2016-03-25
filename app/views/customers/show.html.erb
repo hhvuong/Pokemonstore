@@ -1,0 +1,75 @@
+<section class="middleSection">
+      <div class="center container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @customer.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customer.email %>
+</p>
+
+<p>
+  <strong>Phone num:</strong>
+  <%= @customer.phone_num %>
+</p>
+
+<p>
+  <strong>Cc type:</strong>
+  <%= @customer.cc_type %>
+</p>
+
+<p>
+  <strong>Cc num:</strong>
+  <%= @customer.cc_num %>
+</p>
+
+<p>
+  <strong>Cc exp:</strong>
+  <%= @customer.cc_exp %>
+</p>
+<h2> All of Products of <%=@customer.name %> </h2>
+<table cellspacing="10";  style="border:1px solid black;">
+		<tr>
+			<th> Name </th>
+			<th> Price </th>
+			<th> Description </th>
+		</tr>
+
+<% @customer.likes.each do |e| %>
+	<tr>
+		<td><%= e.product.name %></td>
+		<td><%= e.product.price %></td>
+		<td><%= e.product.description %></td>
+
+	</tr>
+	<% end %>
+</table>
+
+<p>
+<% if @customer.likes.count < Product.count %>
+  <h3><p>Add A Product Here.</p></h3>
+  <%= form_tag add_product_customer_path(@customer) do %>
+    <%= select_tag(:product,
+        options_from_collection_for_select(@customer.unliked_products, :id, :name)) %>
+
+    <%= submit_tag 'Order' %>
+  <% end %>
+<% end %>
+</p>
+</br>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>
+
+
+</div>
+</section>

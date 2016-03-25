@@ -1,0 +1,42 @@
+<section class="middleSection">
+      <div class="center container">
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Price in $</th>
+      <th>descrption</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><% if product.has_photo? %>
+        <%= image_tag product.photo_path, width:70 %>
+        <% else %>
+        No Photo
+        <% end %></td>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.description %></td>
+        
+        <td><%= link_to(image_tag("eye-icon.png", width: '60',height:'60'), product, title: "Show") %> </td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
+
+</div>
+</section>

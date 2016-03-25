@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PokeStore</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+ <header class="primary-header container group">
+
+      <h1 class="logo">
+     
+      <%= image_tag("logo.png", :size => "250x100") %>
+       
+      </h1>
+
+      <h3 class="postion">
+
+      <nav class="nav primary-nav">
+        <ul>
+          <li><%= link_to 'HOME PAGE', root_path %></li>
+          <li><%= link_to 'PRODUCTS', products_path %></a></li>
+          <% if session[:logged_in] %>
+                <li><%= link_to 'CUSTOMERS', customers_path %></a></li>
+                <li><%= link_to 'LOG OUT', logins_logout_path %></a></li>
+             <% else %>
+	        <li><%= link_to 'LOG IN', logins_login_form_path %></a></li>
+	  <% end %>
+          <li><%= link_to 'CONTACT US!', home_feedback_path %></a></li>
+          
+        </ul>
+      </nav>
+
+    </header>
+    </h3>
+
+<%= yield %>
+<br>
+
+<center>
+<%= image_tag("ball.jpg",:size => "150x150", :alt => "logo") %>
+</center>
+</body>
+</html>

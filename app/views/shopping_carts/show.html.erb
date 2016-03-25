@@ -1,0 +1,13 @@
+<section class="middleSection">
+      <div class="center container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @shopping_cart.customer_id %>
+</p>
+
+<%= link_to 'Edit', edit_shopping_cart_path(@shopping_cart) %> |
+<%= link_to 'Back', shopping_carts_path %>
+</div>
+</section>y

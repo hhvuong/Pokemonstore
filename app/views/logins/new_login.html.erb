@@ -1,0 +1,34 @@
+<section class="middleSection">
+      <div class="center container">
+<h1>Create your account</h1>
+
+
+
+<center>
+<p><%= form_tag logins_registration_confirmation_path do %>
+  <table>
+    <tr> 
+      <td>customername</td> 
+      <td><%= text_field_tag :customer, '' %></td>
+    </tr>
+    <tr> 
+      <td>Password</td> 
+      <td><%= password_field_tag :pw, '' %></td>
+    </tr>
+    <tr> 
+      <td>Confirmation</td> 
+      <td><%= password_field_tag :confirm_pw, '' %></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><%= submit_tag 'Create your account' %>
+    </tr>
+  </table>
+<% end %></p>
+</td>
+</tr>
+</table>
+</p>
+</div>
+</section>
+</center>

@@ -1,0 +1,39 @@
+<section class="middleSection">
+      <div class="center container">
+<h1>Sign In</h1>
+
+<center>
+<%= form_tag logins_login_form_path do %>
+  <table>
+    <tr> 
+      <td>Customer Name:</td> 
+      <td><%= text_field_tag :customer_from_login, '' %></td>
+    </tr>
+    <tr>
+      <td>Password:</td> 
+      <td><%= password_field_tag :pw_from_login, '' %></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><%= submit_tag 'Login' %></td> 
+    </tr>
+  </table>
+<% end %>
+
+<h1> Don't have an account?</h1>
+<h2>Click Below</h2>
+<ul class="photo-grid">
+  <li>
+    <a>
+      <figure>
+        <%= image_tag("new.png", :size => "250x100") %>
+        <figcaption><p><%= link_to 'New Customer', logins_new_login_path %></p></figcaption>
+      </figure>
+    </a>
+  </li>
+</ul>
+
+</div>
+</section>
+</center>
+
